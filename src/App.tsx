@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from './components/ui/dialog';
 import logoImage from 'figma:asset/a86556e1d5e0c830297ad65a6f3ba3aca815142c.png';
 import { ThemeProvider, useTheme } from './components/ThemeContext';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { Toaster } from './components/ui/sonner';
 import { restaurantsByLocation, sponsoredRestaurants, Restaurant as RestaurantType } from './data/restaurantsByLocation';
 import { LoadingAnimation } from './components/LoadingAnimation';
