@@ -17,6 +17,7 @@ interface Restaurant {
   name: string;
   cuisine: string;
   image: string;
+  logo: string;
   rating: number;
   priceLevel: number;
   distance: string;
@@ -27,6 +28,7 @@ interface Restaurant {
     vegetarian: boolean;
     allergenFriendly: boolean;
   };
+  sponsored?: boolean;
 }
 
 interface RestaurantCardProps {

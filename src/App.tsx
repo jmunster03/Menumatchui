@@ -488,7 +488,14 @@ function AppContent() {
                     <Calendar className="w-5 h-5" />
                   </Button>
                   <QuestsSheet 
-                    container={containerRef.current}
+                    
+                    container={containerRef.current} 
+                    adsRemoved={adsRemoved}
+                    onRemoveAds={() => {
+                      setAdsRemoved(true);
+                      toast.success('Ads removed! Enjoying ad-free browsing.');
+                    }}
+                 
                     adsRemoved={adsRemoved}
                     onRemoveAds={() => {
                       setAdsRemoved(true);

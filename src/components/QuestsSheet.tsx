@@ -609,6 +609,46 @@ export function QuestsSheet({ container, adsRemoved = false, onRemoveAds }: Ques
                   </div>
                 </div>
               </div>
+
+              {/* Ad Removal Option */}
+              <div className={`${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} border-2 rounded-xl p-4 space-y-3 mt-3`}>
+                <h3 className={isDarkMode ? 'text-white' : 'text-gray-900'}>Ad-Free Experience</h3>
+                <div className={`${isDarkMode ? 'bg-gray-700/50 border-gray-600' : 'bg-gray-50 border-gray-200'} border-2 rounded-xl p-3`}>
+                  <div className="flex items-start gap-3">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 border-2 border-gray-300 flex items-center justify-center text-2xl flex-shrink-0">
+                      🚫
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-start justify-between gap-2 mb-1">
+                        <h4 className="text-purple-400">Remove All Ads</h4>
+                        <Badge variant="secondary" className={`${isDarkMode ? 'bg-green-900/50 text-green-300' : 'bg-green-100 text-green-700'} whitespace-nowrap`}>
+                          $9.99
+                        </Badge>
+                      </div>
+                      <p className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-600'} mb-2`}>
+                        {adsRemoved 
+                          ? 'You\'re enjoying an ad-free experience!' 
+                          : 'Remove all sponsored restaurant cards from your feed'}
+                      </p>
+                      {!adsRemoved && onRemoveAds && (
+                        <Button 
+                          size="sm" 
+                          className={`w-full ${isDarkMode ? 'bg-gradient-to-r from-pink-600 to-orange-600 hover:from-pink-700 hover:to-orange-700' : 'bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600'} text-white`}
+                          onClick={onRemoveAds}
+                        >
+                          Purchase
+                        </Button>
+                      )}
+                      {adsRemoved && (
+                        <div className={`flex items-center gap-2 justify-center py-2 ${isDarkMode ? 'text-green-400' : 'text-green-600'}`}>
+                          <Check className="w-4 h-4" />
+                          <span className="text-sm">Purchased</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
               
               <div className={`mt-4 bg-gradient-to-r ${isDarkMode ? 'from-pink-900/40 to-orange-900/40' : 'from-pink-50 to-orange-50'} rounded-xl p-3`}>
                 <p className={`text-xs ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
